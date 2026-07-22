@@ -7,25 +7,13 @@
 <title>برای بیتا ❤️</title>
 <style>
 :root{
-  --bg:#09070d;
-  --bg2:#17101f;
-  --text:#fff9fb;
-  --muted:#cdbfc9;
-  --gold:#f0cf86;
-  --rose:#ff9eb7;
-  --rose2:#cf6f8e;
-  --glass:rgba(255,255,255,.085);
-  --glass2:rgba(255,255,255,.04);
-  --line:rgba(255,255,255,.13);
-  --shadow:0 30px 90px rgba(0,0,0,.45);
+  --bg:#09070d;--bg2:#17101f;--text:#fff9fb;--muted:#cdbfc9;
+  --gold:#f0cf86;--rose:#ff9eb7;--line:rgba(255,255,255,.13);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;
-  min-height:100vh;
-  overflow-x:hidden;
-  color:var(--text);
+  margin:0;min-height:100vh;overflow-x:hidden;color:var(--text);
   font-family:Tahoma,Arial,sans-serif;
   background:
     radial-gradient(circle at 15% 5%,rgba(255,116,159,.15),transparent 33%),
@@ -34,200 +22,108 @@ body{
 }
 body.locked{overflow:hidden}
 canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
-#spotlight{
-  position:fixed;
-  width:420px;height:420px;border-radius:50%;
-  pointer-events:none;z-index:1;
-  background:radial-gradient(circle,rgba(255,158,183,.10),transparent 68%);
-  transform:translate(-50%,-50%);
-  transition:opacity .3s;
-}
-main{position:relative;z-index:2;width:min(92%,980px);margin:auto;padding-bottom:90px}
-
-/* cinematic opening */
+main{position:relative;z-index:2;width:min(92%,980px);margin:auto;padding-bottom:95px}
 .intro{
-  position:fixed;inset:0;z-index:100;
-  display:grid;place-items:center;text-align:center;padding:22px;
-  background:
-    radial-gradient(circle at center,rgba(255,158,183,.10),transparent 38%),
-    linear-gradient(180deg,#07050a,#120c18);
-  transition:opacity .9s ease,visibility .9s ease;
+  position:fixed;inset:0;z-index:100;display:grid;place-items:center;text-align:center;padding:22px;
+  background:radial-gradient(circle at center,rgba(255,158,183,.10),transparent 38%),linear-gradient(180deg,#07050a,#120c18);
+  transition:.8s
 }
 .intro.hide{opacity:0;visibility:hidden}
-.intro-card{
-  width:min(92%,700px);
-  padding:48px 24px;
+.intro-card,.hero-card,.section{
   border:1px solid var(--line);
-  border-radius:32px;
-  background:rgba(255,255,255,.06);
-  backdrop-filter:blur(20px);
-  box-shadow:var(--shadow);
+  background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.035));
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 30px 90px rgba(0,0,0,.42)
 }
-.intro-mark{font-size:3.2rem;animation:beat 1.35s infinite}
-.intro h2{font-size:clamp(2rem,7vw,4.4rem);margin:16px 0 8px}
-.intro p{color:var(--muted);line-height:2}
-.intro small{display:block;color:#8f828d;margin-top:16px}
-
-/* hero */
+.intro-card{width:min(92%,700px);padding:48px 24px;border-radius:32px}
+.intro h2{font-size:clamp(2rem,7vw,4.2rem);margin:15px 0}
+.intro p,.lead,.muted{color:var(--muted);line-height:2}
 .hero{min-height:100vh;display:grid;place-items:center;text-align:center}
-.hero-card{
-  width:100%;position:relative;overflow:hidden;padding:62px 28px;
-  border:1px solid var(--line);border-radius:38px;
-  background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.035));
-  backdrop-filter:blur(22px);box-shadow:var(--shadow)
-}
-.hero-card::before{
-  content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;
-  background:linear-gradient(135deg,rgba(240,207,134,.6),transparent 30%,transparent 70%,rgba(255,158,183,.5));
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none
-}
-.orbit{
-  position:absolute;width:340px;height:340px;border:1px solid rgba(255,255,255,.08);
-  border-radius:50%;left:-120px;top:-160px;animation:spin 28s linear infinite
-}
-.orbit::after{content:"✨";position:absolute;right:24px;top:48px;font-size:20px}
-@keyframes spin{to{transform:rotate(360deg)}}
-.kicker{direction:ltr;letter-spacing:6px;color:var(--gold);font-size:.77rem}
-h1{font-size:clamp(2.5rem,8vw,6.3rem);line-height:1.12;margin:20px 0 8px}
-h1 span{color:var(--rose);text-shadow:0 0 36px rgba(255,158,183,.32)}
-.lead{max-width:680px;margin:18px auto 0;color:var(--muted);line-height:2;font-size:1.05rem}
-.hero-heart{font-size:2.8rem;margin-top:24px;display:inline-block;animation:beat 1.35s infinite}
-@keyframes beat{50%{transform:scale(1.22)}}
-.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
-button{
-  border:0;border-radius:999px;padding:14px 24px;font:inherit;cursor:pointer;
-  transition:.25s ease
-}
-button:hover{transform:translateY(-3px)}
-.primary{background:linear-gradient(135deg,#f7e1a3,#e4b758);color:#1b1206;box-shadow:0 12px 35px rgba(228,183,88,.22)}
+.hero-card{width:100%;padding:60px 25px;border-radius:38px;position:relative;overflow:hidden}
+.kicker{direction:ltr;letter-spacing:5px;color:var(--gold);font-size:.78rem}
+h1{font-size:clamp(2.5rem,8vw,6rem);line-height:1.12;margin:18px 0}
+h1 span{color:var(--rose);text-shadow:0 0 32px rgba(255,158,183,.3)}
+.heart{font-size:2.7rem;display:inline-block;margin-top:18px;animation:beat 1.35s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+button{border:0;border-radius:999px;padding:14px 24px;font:inherit;cursor:pointer;transition:.25s}
+button:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(135deg,#f7e1a3,#e4b758);color:#1a1105}
 .secondary{background:rgba(255,255,255,.08);color:white;border:1px solid var(--line)}
-
-.section{
-  margin-top:26px;padding:34px 24px;border-radius:30px;
-  background:linear-gradient(180deg,var(--glass),var(--glass2));
-  border:1px solid var(--line);backdrop-filter:blur(16px);
-  box-shadow:0 22px 70px rgba(0,0,0,.28);
-  opacity:0;transform:translateY(32px);transition:.85s ease
-}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.section{margin-top:26px;padding:32px 23px;border-radius:28px;opacity:0;transform:translateY(28px);transition:.8s}
 .section.visible{opacity:1;transform:none}
-.section-title{display:flex;align-items:center;gap:12px;margin-bottom:22px}
-.section-title .dot{width:9px;height:9px;border-radius:50%;background:var(--rose);box-shadow:0 0 18px var(--rose)}
-.section h2{margin:0;font-size:1.55rem}
+.section h2{margin:0 0 20px}
 .counter{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.unit{padding:22px 8px;text-align:center;border-radius:21px;background:rgba(255,255,255,.07)}
-.unit strong{display:block;color:var(--gold);font-size:2rem;direction:ltr}
-.unit span{display:block;margin-top:7px;color:var(--muted);font-size:.85rem}
-
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.card{
-  padding:24px 18px;min-height:215px;border-radius:23px;
-  background:linear-gradient(145deg,rgba(255,255,255,.095),rgba(255,255,255,.03));
-  border:1px solid var(--line);transition:.35s;
-  display:flex;flex-direction:column;justify-content:center
-}
-.card:hover{transform:perspective(900px) rotateY(-5deg) translateY(-5px)}
-.card h3{color:var(--rose);margin:0 0 12px}
-.card p{margin:0;color:var(--muted);line-height:2}
-
-.secret-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.secret{
-  min-height:180px;padding:22px;border-radius:23px;border:1px solid var(--line);
-  background:rgba(255,255,255,.055);display:grid;place-items:center;text-align:center;
-  cursor:pointer;transition:.35s;position:relative;overflow:hidden
-}
-.secret:hover{transform:translateY(-5px)}
-.secret .front{color:var(--gold);font-weight:bold}
-.secret .back{display:none;color:#f8eef4;line-height:2}
-.secret.open .front{display:none}
-.secret.open .back{display:block}
-.secret.open{background:linear-gradient(145deg,rgba(255,158,183,.14),rgba(255,255,255,.04))}
-
-#typed{white-space:pre-line;line-height:2.28;color:#f5edf3;min-height:330px;font-size:1.04rem}
+.unit{padding:20px 8px;border-radius:19px;background:rgba(255,255,255,.07);text-align:center}
+.unit strong{display:block;color:var(--gold);font-size:1.9rem;direction:ltr}
+.unit span{display:block;color:var(--muted);font-size:.85rem;margin-top:7px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.card{padding:22px 17px;min-height:190px;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.07)}
+.card h3{color:var(--rose);margin:0 0 10px}.card p{color:var(--muted);line-height:2;margin:0}
+.secret-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.secret{min-height:170px;padding:20px;border-radius:22px;background:rgba(255,255,255,.055);border:1px solid var(--line);display:grid;place-items:center;text-align:center;cursor:pointer}
+.secret .back{display:none;line-height:2}.secret.open .front{display:none}.secret.open .back{display:block}
+#typed{white-space:pre-line;line-height:2.25;min-height:335px;color:#f7eef4}
 .cursor{display:inline-block;width:2px;height:1.2em;background:var(--rose);vertical-align:middle;animation:blink .8s infinite}
 @keyframes blink{50%{opacity:0}}
 .signature{display:none;margin-top:20px;color:var(--rose);font-weight:bold}
-
-.final-lock{text-align:center;padding:30px 12px}
-.final-content{display:none}
-.final-content.show{display:block;animation:reveal 1s ease both}
-@keyframes reveal{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
-.final{
-  text-align:center;font-size:clamp(1.6rem,5vw,3.25rem);
-  line-height:1.75;color:var(--gold);padding:32px 12px 12px
-}
-.promise{text-align:center;color:var(--muted);line-height:2}
-
-/* music player */
+.final{text-align:center;font-size:clamp(1.55rem,5vw,3rem);line-height:1.75;color:var(--gold)}
 .player{
-  position:fixed;left:16px;bottom:16px;z-index:30;
-  width:min(92vw,330px);padding:12px 14px;border-radius:20px;
-  background:rgba(18,12,24,.82);border:1px solid var(--line);
-  backdrop-filter:blur(18px);box-shadow:0 18px 50px rgba(0,0,0,.4);
-  display:flex;align-items:center;gap:12px
+  position:fixed;left:12px;bottom:12px;z-index:30;width:min(94vw,350px);
+  padding:12px 14px;border-radius:20px;background:rgba(18,12,24,.9);
+  border:1px solid var(--line);backdrop-filter:blur(18px);
+  display:flex;align-items:center;gap:11px
 }
-.play-btn{
-  flex:0 0 44px;width:44px;height:44px;padding:0;border-radius:50%;
-  background:linear-gradient(135deg,#f7e1a3,#e4b758);color:#1b1206
-}
+.play{width:44px;height:44px;padding:0;border-radius:50%;flex:0 0 44px}
 .player-info{flex:1;min-width:0}
-.song-title{font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.progress{height:5px;margin-top:8px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;cursor:pointer}
+.song{font-size:.84rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.status{font-size:.72rem;color:#a898a5;margin-top:4px}
+.progress{height:5px;background:rgba(255,255,255,.12);border-radius:99px;margin-top:8px;overflow:hidden;cursor:pointer}
 .progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--rose))}
-.time{display:flex;justify-content:space-between;color:#887d86;font-size:.68rem;margin-top:4px;direction:ltr}
-.volume{width:65px;accent-color:var(--rose)}
-
-.petal{position:fixed;top:-40px;z-index:8;width:18px;height:14px;background:linear-gradient(135deg,#ff9eb7,#cf6f8e);border-radius:70% 30% 70% 30%;opacity:.75;pointer-events:none;animation:fall linear forwards}
-@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(720deg);opacity:.05}}
-.float-heart{position:fixed;bottom:-40px;z-index:9;pointer-events:none;animation:rise linear forwards}
-@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
-.footer{text-align:center;color:#7f727d;padding:38px 0 0;font-size:.85rem}
-
-@media(max-width:850px){.cards{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:680px){
-  .hero-card{padding:44px 18px}
+.petal,.float-heart{position:fixed;pointer-events:none;z-index:10}
+.petal{top:-40px;width:18px;height:14px;background:linear-gradient(135deg,#ff9eb7,#cf6f8e);border-radius:70% 30% 70% 30%;animation:fall linear forwards}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(720deg);opacity:0}}
+.float-heart{bottom:-40px;animation:rise linear forwards}
+@keyframes rise{to{transform:translateY(-115vh) rotate(20deg);opacity:0}}
+.footer{text-align:center;color:#7f727d;padding:36px 0}
+@media(max-width:800px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){
   .counter{grid-template-columns:repeat(2,1fr)}
   .cards,.secret-grid{grid-template-columns:1fr}
-  .section{padding:27px 17px}
-  .player{left:10px;bottom:10px;width:calc(100vw - 20px)}
-  .volume{display:none}
+  .hero-card,.section{padding:26px 17px}
+  .player{left:8px;bottom:8px;width:calc(100vw - 16px)}
 }
 </style>
 </head>
 <body class="locked">
 <canvas id="stars"></canvas>
-<div id="spotlight"></div>
 
 <div class="intro" id="intro">
   <div class="intro-card">
-    <div class="intro-mark">❤️</div>
+    <div style="font-size:3rem">❤️</div>
     <h2>یک پیام برای بیتا</h2>
-    <p>هندزفری را بگذار، صدا را روشن کن و برای چند دقیقه فقط با قلبت این صفحه را ببین.</p>
-    <button class="primary" onclick="enterSite()">ورود به دنیای ما ✨</button>
-    <small>موسیقی بعد از لمس این دکمه پخش می‌شود.</small>
+    <p>هندزفری را بگذار، صدا را روشن کن و این صفحه را با قلبت ببین.</p>
+    <button class="primary" id="enterBtn" onclick="enterSite()">ورود به دنیای ما ✨</button>
+    <div id="introStatus" class="muted" style="font-size:.8rem;margin-top:14px">با لمس دکمه، موسیقی و نامه شروع می‌شوند.</div>
   </div>
 </div>
 
 <main>
   <section class="hero">
     <div class="hero-card">
-      <div class="orbit"></div>
       <div class="kicker">OUR LITTLE UNIVERSE</div>
       <h1>برای <span>بیتا</span>ی من ❤️</h1>
-      <p class="lead">
-        این صفحه فقط یک تبریک نیست؛
-        یک تکه کوچک از تمام حس‌هایی‌ست که شاید همیشه نتوانم با کلمات بگویم.
-      </p>
-      <div class="hero-heart">❤️</div>
+      <p class="lead">این صفحه فقط یک تبریک نیست؛ یک تکه کوچک از تمام حس‌هایی‌ست که شاید همیشه نتوانم با کلمات بگویم.</p>
+      <div class="heart">❤️</div>
       <div class="actions">
-        <button class="primary" onclick="startExperience()">شروع داستان ما ✨</button>
+        <button class="primary" onclick="goToLetter()">نامه‌ام را بخوان 💌</button>
         <button class="secondary" onclick="releaseHearts()">یک سورپرایز کوچک</button>
       </div>
     </div>
   </section>
 
-  <section class="section" id="counterSection">
-    <div class="section-title"><span class="dot"></span><h2>زمانی که با هم ساخته‌ایم</h2></div>
+  <section class="section">
+    <h2>زمانی که با هم ساخته‌ایم</h2>
     <div class="counter">
       <div class="unit"><strong id="days">0</strong><span>روز</span></div>
       <div class="unit"><strong id="hours">0</strong><span>ساعت</span></div>
@@ -237,73 +133,53 @@ button:hover{transform:translateY(-3px)}
   </section>
 
   <section class="section">
-    <div class="section-title"><span class="dot"></span><h2>چرا تو برای من خاصی؟</h2></div>
+    <h2>چرا تو برای من خاصی؟</h2>
     <div class="cards">
       <div class="card"><h3>آرامش من</h3><p>کنار تو حتی شلوغ‌ترین روزها هم آرام‌تر می‌شوند.</p></div>
-      <div class="card"><h3>لبخند من</h3><p>خنده‌هایت می‌تواند حال یک روز معمولی را کاملاً عوض کند.</p></div>
+      <div class="card"><h3>لبخند من</h3><p>خنده‌هایت حال یک روز معمولی را کاملاً عوض می‌کند.</p></div>
       <div class="card"><h3>آینده من</h3><p>هر تصویری که از فردا می‌سازم، با حضور تو زیباتر است.</p></div>
       <div class="card"><h3>انتخاب من</h3><p>تو انتخابی هستی که هر روز دوباره با قلبم انجام می‌دهم.</p></div>
     </div>
   </section>
 
   <section class="section">
-    <div class="section-title"><span class="dot"></span><h2>سه پیام مخفی برای تو</h2></div>
+    <h2>سه پیام مخفی برای تو</h2>
     <div class="secret-grid">
-      <div class="secret" onclick="this.classList.toggle('open')">
-        <div class="front">برای باز کردن لمس کن 💌</div>
-        <div class="back">هر بار که صدایت را می‌شنوم، یک گوشه از خستگی‌هایم ناپدید می‌شود.</div>
-      </div>
-      <div class="secret" onclick="this.classList.toggle('open')">
-        <div class="front">یک راز کوچک ✨</div>
-        <div class="back">خیلی از لبخندهای بی‌دلیل من، دلیلشان فکر کردن به توست.</div>
-      </div>
-      <div class="secret" onclick="this.classList.toggle('open')">
-        <div class="front">آخرین پیام ❤️</div>
-        <div class="back">من فقط امروز دوستت ندارم؛ تو را در تمام فرداهایی که می‌سازم می‌خواهم.</div>
-      </div>
+      <div class="secret" onclick="this.classList.toggle('open')"><div class="front">برای باز کردن لمس کن 💌</div><div class="back">هر بار که صدایت را می‌شنوم، گوشه‌ای از خستگی‌هایم ناپدید می‌شود.</div></div>
+      <div class="secret" onclick="this.classList.toggle('open')"><div class="front">یک راز کوچک ✨</div><div class="back">خیلی از لبخندهای بی‌دلیل من، دلیلشان فکر کردن به توست.</div></div>
+      <div class="secret" onclick="this.classList.toggle('open')"><div class="front">آخرین پیام ❤️</div><div class="back">تو را فقط برای امروز نمی‌خواهم؛ تو را در تمام فرداهایم می‌خواهم.</div></div>
     </div>
   </section>
 
   <section class="section" id="letterSection">
-    <div class="section-title"><span class="dot"></span><h2>نامه‌ای فقط برای بیتا</h2></div>
+    <h2>نامه‌ای فقط برای بیتا</h2>
     <span id="typed"></span><span class="cursor" id="cursor"></span>
     <div class="signature" id="signature">با تمام قلبم، محمد ❤️</div>
   </section>
 
   <section class="section">
-    <div class="final-lock">
-      <button class="primary" id="finalBtn" onclick="unlockFinal()">آخرین حرف قلبم را باز کن ❤️</button>
-      <div class="final-content" id="finalContent">
-        <div class="final">
-          بیتا...<br>
-          این فقط یک ماه‌گرد نیست؛<br>
-          یک قدم دیگر به سمت تمام آینده‌ای‌ست که با تو می‌خواهم. ❤️
-        </div>
-        <p class="promise">و این تازه آغاز زیباترین داستان زندگی ماست...</p>
-      </div>
-    </div>
+    <div class="final">بیتا...<br>این فقط یک ماه‌گرد نیست؛<br>یک قدم دیگر به سمت تمام آینده‌ای‌ست که با تو می‌خواهم. ❤️</div>
   </section>
 
   <div class="footer">Made with love — فقط برای بیتا</div>
 </main>
 
 <div class="player">
-  <button class="play-btn" id="playBtn" onclick="toggleMusic()">▶</button>
+  <button class="primary play" id="playBtn" onclick="toggleMusic()">▶</button>
   <div class="player-info">
-    <div class="song-title">آهنگ مخصوص داستان ما</div>
+    <div class="song">آهنگ مخصوص داستان ما</div>
+    <div class="status" id="musicStatus">در انتظار شروع...</div>
     <div class="progress" id="progress"><span id="progressBar"></span></div>
-    <div class="time"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
   </div>
-  <input class="volume" id="volume" type="range" min="0" max="1" step="0.05" value="0.75">
 </div>
 
-<audio id="music" loop preload="auto">
-  <source src="music.mp3" type="audio/mpeg">
+<audio id="music" preload="auto" loop playsinline>
+  <source src="./music.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-const START_DATE=new Date("2025-02-18T00:00:00");
-const letter=`بیتای عزیزم...
+const START_DATE = new Date("2025-02-18T00:00:00");
+const letterText = `بیتای عزیزم...
 
 هر بار که ماه‌گردمان می‌رسد، بیشتر می‌فهمم که حضور تو برای من فقط یک اتفاق قشنگ نبود؛
 تو آرامشی شدی که بعد از تمام خستگی‌ها دنبالش می‌گشتم.
@@ -314,135 +190,137 @@ const letter=`بیتای عزیزم...
 
 ممنونم که هستی،
 که کنارم ماندی،
-که با تمام خوبی‌هایت باعث شدی هر روز بیشتر دوستت داشته باشم.
+و با تمام خوبی‌هایت باعث شدی هر روز بیشتر دوستت داشته باشم.
 
 ماه‌گردمان مبارک، عشق من.
 من هنوز هم هر روز، دوباره انتخابت می‌کنم.`;
 
-const music=document.getElementById("music");
-const playBtn=document.getElementById("playBtn");
-const progress=document.getElementById("progress");
-const progressBar=document.getElementById("progressBar");
-const currentTimeEl=document.getElementById("currentTime");
-const durationEl=document.getElementById("duration");
-const volume=document.getElementById("volume");
-let playing=false,typed=false;
+const music = document.getElementById("music");
+const playBtn = document.getElementById("playBtn");
+const musicStatus = document.getElementById("musicStatus");
+const progressBar = document.getElementById("progressBar");
+let isPlaying = false;
+let typingStarted = false;
 
 async function enterSite(){
   document.getElementById("intro").classList.add("hide");
   document.body.classList.remove("locked");
-  releaseHearts();showerPetals();
+  releaseHearts();
+  showerPetals();
+
+  startTyping();
+
   try{
-    music.volume=Number(volume.value);
+    music.load();
+    music.volume = 0.8;
     await music.play();
-    playing=true;
-    playBtn.textContent="❚❚";
-  }catch(e){
-    playing=false;
-    playBtn.textContent="▶";
+    isPlaying = true;
+    playBtn.textContent = "❚❚";
+    musicStatus.textContent = "در حال پخش";
+  }catch(error){
+    isPlaying = false;
+    playBtn.textContent = "▶";
+    musicStatus.textContent = "برای پخش، دکمه ▶ را لمس کن";
+    console.error("Music play error:", error);
   }
+
+  setTimeout(()=>{
+    document.getElementById("letterSection").scrollIntoView({behavior:"smooth",block:"center"});
+  },1200);
 }
 
-async function startExperience(){
-  document.getElementById("counterSection").scrollIntoView({behavior:"smooth",block:"center"});
-  releaseHearts();showerPetals();
-  if(!playing){
-    try{
-      await music.play();
-      playing=true;
-      playBtn.textContent="❚❚";
-    }catch(e){}
-  }
-  if(!typed){
-    typed=true;
-    setTimeout(typeLetter,1200);
-  }
+function startTyping(){
+  if(typingStarted) return;
+  typingStarted = true;
+
+  const typed = document.getElementById("typed");
+  typed.textContent = "";
+  let index = 0;
+
+  const timer = setInterval(()=>{
+    typed.textContent += letterText.charAt(index);
+    index++;
+
+    if(index >= letterText.length){
+      clearInterval(timer);
+      document.getElementById("cursor").style.display = "none";
+      document.getElementById("signature").style.display = "block";
+    }
+  },28);
+}
+
+function goToLetter(){
+  startTyping();
+  document.getElementById("letterSection").scrollIntoView({behavior:"smooth",block:"center"});
 }
 
 async function toggleMusic(){
   try{
-    if(!playing){
-      await music.play();
-      playing=true;
-      playBtn.textContent="❚❚";
-    }else{
+    if(isPlaying){
       music.pause();
-      playing=false;
-      playBtn.textContent="▶";
+      isPlaying = false;
+      playBtn.textContent = "▶";
+      musicStatus.textContent = "متوقف شده";
+    }else{
+      music.load();
+      await music.play();
+      isPlaying = true;
+      playBtn.textContent = "❚❚";
+      musicStatus.textContent = "در حال پخش";
     }
-  }catch(e){
-    alert("فایل music.mp3 پیدا نشد یا مرورگر اجازه پخش نداد.");
+  }catch(error){
+    musicStatus.textContent = "فایل music.mp3 لود نشد";
+    alert("موزیک لود نشد. نام فایل باید دقیقاً music.mp3 باشد و کنار index.html قرار بگیرد.");
+    console.error(error);
   }
 }
 
-function formatTime(sec){
-  if(!Number.isFinite(sec))return "0:00";
-  const m=Math.floor(sec/60);
-  const s=Math.floor(sec%60).toString().padStart(2,"0");
-  return `${m}:${s}`;
-}
-music.addEventListener("loadedmetadata",()=>durationEl.textContent=formatTime(music.duration));
+music.addEventListener("error",()=>{
+  musicStatus.textContent = "خطا در فایل music.mp3";
+});
+
+music.addEventListener("canplay",()=>{
+  if(!isPlaying) musicStatus.textContent = "آماده پخش";
+});
+
 music.addEventListener("timeupdate",()=>{
-  currentTimeEl.textContent=formatTime(music.currentTime);
-  const p=music.duration?(music.currentTime/music.duration)*100:0;
-  progressBar.style.width=p+"%";
+  if(music.duration){
+    progressBar.style.width = ((music.currentTime / music.duration) * 100) + "%";
+  }
 });
-progress.addEventListener("click",e=>{
-  if(!music.duration)return;
-  const r=progress.getBoundingClientRect();
-  music.currentTime=((e.clientX-r.left)/r.width)*music.duration;
-});
-volume.addEventListener("input",()=>music.volume=Number(volume.value));
 
 function updateCounter(){
-  let t=Math.max(0,Math.floor((Date.now()-START_DATE.getTime())/1000));
-  const d=Math.floor(t/86400);t%=86400;
-  const h=Math.floor(t/3600);t%=3600;
-  const m=Math.floor(t/60);const s=t%60;
+  let total = Math.max(0,Math.floor((Date.now()-START_DATE.getTime())/1000));
+  const d=Math.floor(total/86400); total%=86400;
+  const h=Math.floor(total/3600); total%=3600;
+  const m=Math.floor(total/60); const s=total%60;
   days.textContent=d;hours.textContent=h;minutes.textContent=m;seconds.textContent=s;
 }
-updateCounter();setInterval(updateCounter,1000);
+updateCounter();
+setInterval(updateCounter,1000);
 
 const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")})
-},{threshold:.14});
-document.querySelectorAll(".section").forEach(s=>observer.observe(s));
-
-function typeLetter(){
-  const el=document.getElementById("typed");
-  let i=0;
-  const timer=setInterval(()=>{
-    el.textContent+=letter[i]||"";
-    i++;
-    if(i>=letter.length){
-      clearInterval(timer);
-      document.getElementById("cursor").style.display="none";
-      document.getElementById("signature").style.display="block";
-    }
-  },31);
-}
-
-function unlockFinal(){
-  document.getElementById("finalBtn").style.display="none";
-  document.getElementById("finalContent").classList.add("show");
-  releaseHearts();showerPetals();
-}
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add("visible");
+  });
+},{threshold:.12});
+document.querySelectorAll(".section").forEach(section=>observer.observe(section));
 
 function releaseHearts(){
-  for(let i=0;i<36;i++)setTimeout(()=>{
+  for(let i=0;i<30;i++) setTimeout(()=>{
     const e=document.createElement("div");
     e.className="float-heart";
-    e.textContent=Math.random()>.34?"❤️":"✨";
+    e.textContent=Math.random()>.35?"❤️":"✨";
     e.style.left=Math.random()*100+"vw";
     e.style.fontSize=(14+Math.random()*22)+"px";
     e.style.animationDuration=(4+Math.random()*4)+"s";
     document.body.appendChild(e);
     setTimeout(()=>e.remove(),8500);
-  },i*65)
+  },i*65);
 }
 
 function showerPetals(){
-  for(let i=0;i<42;i++)setTimeout(()=>{
+  for(let i=0;i<34;i++) setTimeout(()=>{
     const p=document.createElement("span");
     p.className="petal";
     p.style.left=Math.random()*100+"vw";
@@ -450,36 +328,39 @@ function showerPetals(){
     p.style.setProperty("--drift",(Math.random()*180-90)+"px");
     document.body.appendChild(p);
     setTimeout(()=>p.remove(),12000);
-  },i*85)
+  },i*85);
 }
 
-/* pointer glow */
-const spotlight=document.getElementById("spotlight");
-addEventListener("pointermove",e=>{
-  spotlight.style.left=e.clientX+"px";
-  spotlight.style.top=e.clientY+"px";
-});
-
 /* stars */
-const canvas=document.getElementById("stars"),ctx=canvas.getContext("2d");
+const canvas=document.getElementById("stars");
+const ctx=canvas.getContext("2d");
 let stars=[];
 function resize(){
-  canvas.width=innerWidth;canvas.height=innerHeight;
+  canvas.width=innerWidth;
+  canvas.height=innerHeight;
   stars=Array.from({length:Math.floor(innerWidth/6)},()=>({
-    x:Math.random()*canvas.width,y:Math.random()*canvas.height,
-    r:Math.random()*1.4+.2,a:Math.random(),v:Math.random()*.004+.002
-  }))
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*1.4+.2,
+    a:Math.random(),
+    v:Math.random()*.004+.002
+  }));
 }
 function draw(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
-  for(const s of stars){
-    s.a+=s.v;if(s.a>1||s.a<.15)s.v*=-1;
-    ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-    ctx.fillStyle=`rgba(255,255,255,${s.a})`;ctx.fill()
+  for(const star of stars){
+    star.a+=star.v;
+    if(star.a>1||star.a<.15) star.v*=-1;
+    ctx.beginPath();
+    ctx.arc(star.x,star.y,star.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(255,255,255,${star.a})`;
+    ctx.fill();
   }
-  requestAnimationFrame(draw)
+  requestAnimationFrame(draw);
 }
-addEventListener("resize",resize);resize();draw();
+addEventListener("resize",resize);
+resize();
+draw();
 </script>
 </body>
 </html>
