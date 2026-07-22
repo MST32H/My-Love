@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d0914">
+<title>برای بیتا ❤️</title>
+<style>
+:root{
+  --bg:#0d0914;
+  --glass:rgba(255,255,255,.08);
+  --line:rgba(255,255,255,.14);
+  --gold:#f0cf83;
+  --rose:#ff9eb5;
+  --text:#fffaf7;
+  --muted:#c8bec7;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; min-height:100vh; overflow-x:hidden;
+  font-family:Tahoma,Arial,sans-serif; color:var(--text);
+  background:
+    radial-gradient(circle at 20% 0%,rgba(255,100,145,.16),transparent 35%),
+    radial-gradient(circle at 90% 10%,rgba(240,207,131,.12),transparent 32%),
+    linear-gradient(180deg,#09070e,#17101d 55%,#0b0810);
+}
+canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+main{position:relative;z-index:2;width:min(92%,900px);margin:auto;padding:20px 0 70px}
+.hero{
+  min-height:96vh; display:grid; place-items:center; text-align:center;
+}
+.glass{
+  width:100%; padding:48px 24px; border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
+  border-radius:32px; backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 30px 90px rgba(0,0,0,.48);
+}
+.badge{letter-spacing:4px;color:var(--gold);font-size:.8rem;direction:ltr}
+h1{font-size:clamp(2.3rem,8vw,5.6rem);margin:18px 0 8px;line-height:1.15}
+h1 span{color:var(--rose);text-shadow:0 0 28px rgba(255,158,181,.3)}
+.subtitle{color:var(--muted);line-height:2;max-width:660px;margin:20px auto}
+.heart{font-size:2.5rem;display:inline-block;animation:beat 1.25s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+button{
+  border:0;border-radius:999px;padding:14px 23px;font:inherit;cursor:pointer;
+  transition:.25s;box-shadow:0 12px 28px rgba(0,0,0,.18)
+}
+button:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(135deg,#f6dfa0,#e7b95d);color:#1b1206}
+.secondary{background:rgba(255,255,255,.09);color:white;border:1px solid var(--line)}
+.section{
+  margin-top:25px;padding:30px 22px;border-radius:26px;
+  background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(15px)
+}
+.section h2{margin:0 0 20px;color:#fff}
+.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.unit{padding:20px 8px;text-align:center;border-radius:18px;background:rgba(255,255,255,.075)}
+.unit strong{display:block;color:var(--gold);font-size:1.9rem;direction:ltr}
+.unit span{display:block;color:var(--muted);font-size:.85rem;margin-top:7px}
+.hidden{display:none}
+.show{display:block;animation:fadeUp .8s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+#typed{white-space:pre-line;text-align:right;line-height:2.2;font-size:1.05rem;color:#f4edf3;min-height:260px}
+.signature{margin-top:20px;color:var(--rose);font-weight:bold}
+.final{
+  text-align:center;font-size:clamp(1.5rem,5vw,3rem);line-height:1.7;
+  color:var(--gold);padding:45px 20px
+}
+.small{color:var(--muted);text-align:center;line-height:2}
+.float-heart{position:fixed;bottom:-40px;z-index:10;pointer-events:none;animation:rise linear forwards}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+.music{position:fixed;left:16px;bottom:16px;z-index:20;width:48px;height:48px;padding:0}
+@media(max-width:650px){
+  .glass{padding:38px 17px}
+  .counter{grid-template-columns:repeat(2,1fr)}
+  .section{padding:25px 17px}
+}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<main>
+  <section class="hero">
+    <div class="glass">
+      <div class="badge">HAPPY MONTHIVERSARY</div>
+      <h1>برای <span>بیتا</span>ی من ❤️</h1>
+      <p class="subtitle">
+        بعضی آدم‌ها فقط وارد زندگی نمی‌شوند؛
+        می‌آیند تا تمام معنی زندگی را زیباتر کنند.
+      </p>
+      <div class="heart">❤️</div>
+      <div class="actions">
+        <button class="primary" onclick="begin()">سورپرایز را شروع کن ✨</button>
+        <button class="secondary" onclick="hearts()">قلب‌ها را آزاد کن</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>از ۳۰ بهمن ۱۴۰۳ تا همین لحظه</h2>
+    <div class="counter">
+      <div class="unit"><strong id="days">0</strong><span>روز</span></div>
+      <div class="unit"><strong id="hours">0</strong><span>ساعت</span></div>
+      <div class="unit"><strong id="minutes">0</strong><span>دقیقه</span></div>
+      <div class="unit"><strong id="seconds">0</strong><span>ثانیه</span></div>
+    </div>
+  </section>
+
+  <section class="section hidden" id="letterSection">
+    <h2>نامه‌ای فقط برای بیتا</h2>
+    <div id="typed"></div>
+    <div class="signature hidden" id="sig">با تمام قلبم، محمد ❤️</div>
+  </section>
+
+  <section class="section hidden" id="promise">
+    <div class="final">
+      بیتا...<br>
+      این فقط یک ماه‌گرد نیست؛<br>
+      یک قدم دیگر به سمت تمام آینده‌ای‌ست که با تو می‌خواهم. ❤️
+    </div>
+    <p class="small">و این تازه آغاز زیباترین داستان زندگی ماست...</p>
+  </section>
+</main>
+
+<button class="secondary music" onclick="toggleMusic()" id="musicBtn">♫</button>
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const START = new Date("2025-02-18T00:00:00");
+
+function updateCounter(){
+  let t=Math.max(0,Math.floor((Date.now()-START.getTime())/1000));
+  const d=Math.floor(t/86400); t%=86400;
+  const h=Math.floor(t/3600); t%=3600;
+  const m=Math.floor(t/60); const s=t%60;
+  days.textContent=d; hours.textContent=h; minutes.textContent=m; seconds.textContent=s;
+}
+updateCounter(); setInterval(updateCounter,1000);
+
+const letter=`بیتای عزیزم...
+
+هر بار که ماه‌گردمان می‌رسد، بیشتر می‌فهمم که حضور تو برای من فقط یک اتفاق قشنگ نبود؛
+تو آرامشی شدی که بعد از تمام خستگی‌ها دنبالش می‌گشتم.
+
+کنار تو روزهای معمولی هم ارزشمند می‌شوند،
+خنده‌هایت حال دلم را عوض می‌کنند
+و فکر کردن به آینده، وقتی تو در آن هستی، برایم زیباتر می‌شود.
+
+ممنونم که هستی،
+که کنارم ماندی،
+که با تمام خوبی‌هایت باعث شدی هر روز بیشتر دوستت داشته باشم.
+
+ماه‌گردمان مبارک، عشق من.
+من هنوز هم هر روز، دوباره انتخابت می‌کنم.`;
+
+let typing=false;
+function begin(){
+  const sec=document.getElementById("letterSection");
+  sec.classList.remove("hidden"); sec.classList.add("show");
+  sec.scrollIntoView({behavior:"smooth",block:"center"});
+  hearts();
+  if(typing) return;
+  typing=true;
+  let i=0;
+  const el=document.getElementById("typed");
+  const timer=setInterval(()=>{
+    el.textContent += letter[i] || "";
+    i++;
+    if(i>=letter.length){
+      clearInterval(timer);
+      document.getElementById("sig").classList.remove("hidden");
+      document.getElementById("sig").classList.add("show");
+      setTimeout(()=>{
+        const p=document.getElementById("promise");
+        p.classList.remove("hidden"); p.classList.add("show");
+      },900);
+    }
+  },34);
+}
+
+function hearts(){
+  for(let i=0;i<34;i++) setTimeout(makeHeart,i*70);
+}
+function makeHeart(){
+  const e=document.createElement("div");
+  e.className="float-heart";
+  e.textContent=Math.random()>.3?"❤️":"✨";
+  e.style.left=Math.random()*100+"vw";
+  e.style.fontSize=(14+Math.random()*22)+"px";
+  e.style.animationDuration=(4+Math.random()*4)+"s";
+  document.body.appendChild(e);
+  setTimeout(()=>e.remove(),8500);
+}
+
+const music=document.getElementById("music");
+let playing=false;
+async function toggleMusic(){
+  try{
+    if(!playing){await music.play();musicBtn.textContent="❚❚";playing=true}
+    else{music.pause();musicBtn.textContent="♫";playing=false}
+  }catch(e){alert("برای موسیقی، فایل music.mp3 را کنار index.html قرار بده.");}
+}
+
+/* star field */
+const c=document.getElementById("stars"),x=c.getContext("2d");
+let stars=[];
+function resize(){
+  c.width=innerWidth;c.height=innerHeight;
+  stars=Array.from({length:Math.floor(innerWidth/7)},()=>({
+    x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.4+.2,a:Math.random()
+  }));
+}
+function draw(){
+  x.clearRect(0,0,c.width,c.height);
+  for(const s of stars){
+    s.a+=Math.random()*.03-.015;
+    s.a=Math.max(.15,Math.min(1,s.a));
+    x.beginPath();x.arc(s.x,s.y,s.r,0,Math.PI*2);
+    x.fillStyle=`rgba(255,255,255,${s.a})`;x.fill();
+  }
+  requestAnimationFrame(draw);
+}
+addEventListener("resize",resize);resize();draw();
+</script>
+</body>
+</html>
