@@ -1,4 +1,4 @@
-const CACHE = "mb-xviii-v12";
+const CACHE = "mb-xviii-v14";
 const CORE = [
   "./",
   "./index.html",

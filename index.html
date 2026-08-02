@@ -1921,6 +1921,32 @@
         width: 100%;
         border-radius: 8px;
       }
+      .qr-fallback {
+        width: 100%;
+        aspect-ratio: 1;
+        display: grid;
+        place-content: center;
+        text-align: center;
+        text-decoration: none;
+        border: 2px dashed #8b673c66;
+        background: radial-gradient(circle, #fffaf2, #e5d5bf);
+        color: #21130f;
+        padding: 18px;
+      }
+      .qr-fallback[hidden] {
+        display: none;
+      }
+      .qr-fallback span {
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        color: #9a7547;
+      }
+      .qr-fallback b {
+        font:
+          22px/1.8 Georgia,
+          Tahoma,
+          serif;
+      }
       .qr-card h3 {
         font:
           500 36px Georgia,
@@ -2177,6 +2203,20 @@
         }
       }
     </style>
+    <script>
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+      addEventListener("pageshow", () => {
+        requestAnimationFrame(() => {
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+          const opening = document.getElementById("loader");
+          if (opening) opening.classList.remove("open", "hide");
+        });
+      });
+      addEventListener("beforeunload", () => window.scrollTo(0, 0));
+    </script>
   </head>
   <body>
     <div class="grain"></div>
@@ -2689,7 +2729,20 @@
       </section>
       <section class="qr-gift">
         <div class="qr-card reveal">
-          <img src="assets/qr-v12.png" alt="کیوآرکد سایت اختصاصی متین و بیتا" />
+          <img
+            id="qrImage"
+            src="assets/qr-v12.png?v=14"
+            alt="کیوآرکد سایت اختصاصی متین و بیتا"
+            onerror="this.hidden=true;document.getElementById('qrFallback').hidden=false"
+          />
+          <a
+            id="qrFallback"
+            class="qr-fallback"
+            href="https://mst32h.github.io/My-Love/?v=14"
+            hidden
+            aria-label="بازکردن مستقیم داستان متین و بیتا"
+            ><span>لینک اختصاصی</span><b>بازکردن داستان ما</b></a
+          >
           <div>
             <span class="section-no">KEEP OUR STORY CLOSE</span>
             <h3>قصه‌مان، همیشه همراهت</h3>
