@@ -1984,6 +1984,198 @@
           font-size: 20px;
         }
       }
+      /* V12 — Director's Cut */
+      .director-note {
+        padding: 80px 5vw;
+        background: #f3ecdf;
+        color: #21130f;
+        display: grid;
+        place-items: center;
+      }
+      .memory-ticket {
+        width: min(900px, 94vw);
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 30px;
+        align-items: center;
+        padding: 34px;
+        border: 1px solid #7a5b3338;
+        background: linear-gradient(135deg, #fffaf1, #e9dcc8);
+        box-shadow: 0 25px 65px #4a301a1c;
+        position: relative;
+        overflow: hidden;
+      }
+      .memory-ticket:after {
+        content: "DIRECTOR'S CUT";
+        position: absolute;
+        left: 20px;
+        bottom: -10px;
+        font: 900 58px Georgia;
+        color: #472c1510;
+      }
+      .ticket-no {
+        width: 92px;
+        height: 92px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: #70162e;
+        color: #f5dcae;
+        font: 30px Georgia;
+        box-shadow: 0 0 0 9px #70162e18;
+      }
+      .ticket-copy small {
+        letter-spacing: 0.16em;
+        color: #8d6a3e;
+      }
+      .ticket-copy h3 {
+        font:
+          500 clamp(26px, 4vw, 44px) Georgia,
+          Tahoma,
+          serif;
+        margin: 9px 0;
+      }
+      .ticket-copy p {
+        line-height: 1.9;
+        color: #6e5a48;
+        margin: 0;
+      }
+      .reply {
+        padding: 125px 5vw;
+        background: linear-gradient(145deg, #10090c, #211015);
+        color: #f5e8d5;
+        text-align: center;
+      }
+      .reply-inner {
+        max-width: 850px;
+        margin: auto;
+      }
+      .reply h3 {
+        font:
+          500 clamp(40px, 6vw, 72px) Georgia,
+          Tahoma,
+          serif;
+        margin: 14px;
+      }
+      .reply p {
+        color: #c8b69f;
+        line-height: 2;
+      }
+      .reply textarea {
+        width: 100%;
+        min-height: 180px;
+        margin: 28px 0 15px;
+        padding: 24px;
+        border: 1px solid #d2ae6d44;
+        background: #ffffff08;
+        color: #f7ead7;
+        font:
+          18px/2 Tahoma,
+          serif;
+        resize: vertical;
+        outline: none;
+      }
+      .reply textarea:focus {
+        border-color: var(--gold);
+        box-shadow: 0 0 35px #d2ae6d15;
+      }
+      .reply-actions {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .reply-btn,
+      .install-btn {
+        border: 1px solid var(--gold);
+        background: #6e162d;
+        color: #f8e4bd;
+        padding: 13px 24px;
+        font: 14px Tahoma;
+        transition: 0.3s;
+      }
+      .reply-btn:hover,
+      .install-btn:hover {
+        background: var(--gold);
+        color: #1d0d10;
+      }
+      .reply-status {
+        min-height: 26px;
+        margin-top: 14px;
+        color: #d9bd88;
+      }
+      .install-wrap {
+        margin-top: 18px;
+      }
+      .install-btn[hidden] {
+        display: none;
+      }
+      .final-credit {
+        margin-top: 55px;
+        padding-top: 24px;
+        border-top: 1px solid #ffffff22;
+        color: #cdbb9f;
+        font: 11px/2 Georgia;
+        letter-spacing: 0.22em;
+      }
+      .lite-mode .grain,
+      .lite-mode .cinema-vignette,
+      .lite-mode .spark,
+      .lite-mode .hero-glow {
+        display: none;
+      }
+      .lite-mode * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+      }
+      .lite-toggle {
+        position: fixed;
+        left: 18px;
+        bottom: 82px;
+        z-index: 30;
+        border: 1px solid #d2ae6d55;
+        background: #0c090acc;
+        color: #d8bd8d;
+        padding: 9px 12px;
+        font-size: 11px;
+        backdrop-filter: blur(10px);
+      }
+      @media (max-width: 650px) {
+        .director-note {
+          padding: 55px 16px;
+        }
+        .memory-ticket {
+          grid-template-columns: 1fr;
+          text-align: center;
+          padding: 28px 20px;
+        }
+        .ticket-no {
+          margin: auto;
+        }
+        .reply {
+          padding: 90px 20px;
+        }
+        .reply textarea {
+          min-height: 160px;
+          font-size: 16px;
+        }
+        .lite-toggle {
+          bottom: 76px;
+          left: 10px;
+        }
+        .final-credit {
+          font-size: 9px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -2004,7 +2196,7 @@
     </section>
     <audio
       id="music"
-      src="music.mp3?v=11"
+      src="music.mp3?v=12"
       loop
       preload="metadata"
       playsinline
@@ -2045,6 +2237,23 @@
           <span>ادامه‌ی داستان</span>
           <i> </i>
         </div>
+      </section>
+      <section
+        class="director-note"
+        id="directorNote"
+        data-chapter="یادداشت کارگردان"
+      >
+        <article class="memory-ticket reveal">
+          <div class="ticket-no" id="memoryNo">01</div>
+          <div class="ticket-copy">
+            <small>TONIGHT'S RANDOM MEMORY</small>
+            <h3 id="memoryTitle">یک خاطره برای همین لحظه</h3>
+            <p id="memoryText">
+              هر بار که این داستان را باز کنی، یک یادآوری متفاوت از «ما» منتظرت
+              است.
+            </p>
+          </div>
+        </article>
       </section>
       <section
         class="manifesto"
@@ -2369,7 +2578,7 @@
             </div>
             <audio
               id="voice"
-              src="voice.mp3?v=11"
+              src="voice.mp3?v=12"
               preload="auto"
               playsinline
               controls
@@ -2480,7 +2689,7 @@
       </section>
       <section class="qr-gift">
         <div class="qr-card reveal">
-          <img src="assets/qr-v11.png" alt="کیوآرکد سایت اختصاصی متین و بیتا" />
+          <img src="assets/qr-v12.png" alt="کیوآرکد سایت اختصاصی متین و بیتا" />
           <div>
             <span class="section-no">KEEP OUR STORY CLOSE</span>
             <h3>قصه‌مان، همیشه همراهت</h3>
@@ -2488,7 +2697,37 @@
               این QR را می‌شود روی کارت هدیه چاپ کرد؛ با اسکن آن، دوباره همین
               داستان خصوصی باز می‌شود.
             </p>
+            <div class="install-wrap">
+              <button class="install-btn" id="installBtn" hidden>
+                نصب روی صفحه اصلی
+              </button>
+            </div>
           </div>
+        </div>
+      </section>
+      <section
+        class="reply"
+        id="replyChapter"
+        data-chapter="فصل خصوصی — پاسخ بیتا"
+      >
+        <div class="reply-inner reveal">
+          <span class="section-no">YOUR TURN, BITA</span>
+          <h3>حالا یک خط از تو…</h3>
+          <p>
+            این نوشته فقط روی همین گوشی ذخیره می‌شود؛ جایی خصوصی برای جوابی که
+            شاید بخواهی دوباره بخوانی.
+          </p>
+          <textarea
+            id="bitaReply"
+            maxlength="700"
+            placeholder="متین…"
+          ></textarea>
+          <div class="reply-actions">
+            <button class="reply-btn" id="saveReply">
+              ذخیره روی این دستگاه</button
+            ><button class="reply-btn" id="clearReply">پاک‌کردن</button>
+          </div>
+          <div class="reply-status" id="replyStatus" aria-live="polite"></div>
         </div>
       </section>
       <section class="finale" id="finale" data-chapter="فصل آخر — ادامه دارد">
@@ -2515,12 +2754,17 @@
           </button>
           <div class="hold-note">۱.۵ ثانیه لمس را نگه دار</div>
           <div class="last-message">
-            بیتا؛ من آینده را نمی‌دانم، اما می‌دانم در زیباترین تصویرش، تو کنار
-            منی. ❤️
+            بیتا؛ این سایت تمام می‌شود، اما انتخاب من برای دوست‌داشتنت نه. ❤️
+          </div>
+          <div class="final-credit">
+            WRITTEN BY MATIN · MADE ONLY FOR BITA · CHAPTER XVIII
           </div>
         </div>
       </section>
     </main>
+    <button class="lite-toggle" id="liteToggle" aria-label="تغییر حالت سبک">
+      حالت سبک
+    </button>
     <section class="lightbox" id="lightbox" aria-hidden="true">
       <button class="lightbox-close" id="lightboxClose" aria-label="بستن">
         ×
@@ -2812,15 +3056,9 @@
         if (el) sectionNav.observe(el);
       });
       if ("serviceWorker" in navigator)
-        navigator.serviceWorker
-          .getRegistrations()
-          .then((rs) => rs.forEach((r) => r.unregister()))
-          .catch(() => {});
-      if ("caches" in window)
-        caches
-          .keys()
-          .then((ks) => Promise.all(ks.map((k) => caches.delete(k))))
-          .catch(() => {});
+        addEventListener("load", () =>
+          navigator.serviceWorker.register("sw.js?v=12").catch(() => {}),
+        );
       const voice = document.getElementById("voice"),
         voiceCard = document.getElementById("voiceCard"),
         voicePlay = document.getElementById("voicePlay"),
@@ -3114,6 +3352,88 @@
           secretNote.classList.add("open");
         }
       });
+      const directorMemories = [
+        [
+          "اولین فصل",
+          "همه‌چیز از روزی شروع شد که هنوز نمی‌دانستیم قرار است چقدر برای هم مهم شویم.",
+        ],
+        ["صدای آشنا", "بعضی صداها فقط شنیده نمی‌شوند؛ تبدیل به آرامش می‌شوند."],
+        [
+          "یک خنده ساده",
+          "گاهی تمام چیزی که از یک روز سخت نجاتم می‌دهد، به‌یادآوردن خنده توست.",
+        ],
+        [
+          "ما، وسط شلوغی",
+          "دنیا همیشه آرام نبود، اما میان شلوغی‌اش یاد گرفتیم دوباره سمت هم برگردیم.",
+        ],
+        [
+          "نگاه تو",
+          "بعضی حرف‌ها را هیچ‌وقت نگفتیم؛ چون چشم‌هایمان زودتر از کلمات فهمیده بودند.",
+        ],
+        [
+          "فردای مشترک",
+          "آینده هنوز نوشته نشده، اما من بهترین نسخه‌اش را جایی می‌بینم که تو حضور داری.",
+        ],
+      ];
+      const memoryIndex = Math.floor(Math.random() * directorMemories.length),
+        memory = directorMemories[memoryIndex];
+      document.getElementById("memoryNo").textContent = String(
+        memoryIndex + 1,
+      ).padStart(2, "0");
+      document.getElementById("memoryTitle").textContent = memory[0];
+      document.getElementById("memoryText").textContent = memory[1];
+      const replyInput = document.getElementById("bitaReply"),
+        replyStatus = document.getElementById("replyStatus");
+      try {
+        replyInput.value = localStorage.getItem("bita-private-reply") || "";
+      } catch (e) {}
+      document.getElementById("saveReply").onclick = () => {
+        try {
+          localStorage.setItem("bita-private-reply", replyInput.value.trim());
+          replyStatus.textContent = "نوشته‌ات فقط روی همین دستگاه ذخیره شد ♡";
+        } catch (e) {
+          replyStatus.textContent = "مرورگر اجازه ذخیره‌سازی نداد";
+        }
+      };
+      document.getElementById("clearReply").onclick = () => {
+        replyInput.value = "";
+        try {
+          localStorage.removeItem("bita-private-reply");
+        } catch (e) {}
+        replyStatus.textContent = "نوشته پاک شد";
+      };
+      const liteToggle = document.getElementById("liteToggle");
+      let lite =
+        matchMedia("(prefers-reduced-motion: reduce)").matches ||
+        navigator.connection?.saveData ||
+        (navigator.deviceMemory && navigator.deviceMemory <= 2);
+      function setLite(v) {
+        lite = v;
+        document.body.classList.toggle("lite-mode", lite);
+        liteToggle.textContent = lite ? "حالت سینمایی" : "حالت سبک";
+      }
+      setLite(lite);
+      liteToggle.onclick = () => setLite(!lite);
+      const installBtn = document.getElementById("installBtn");
+      let installPrompt = null;
+      addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        installPrompt = e;
+        installBtn.hidden = false;
+      });
+      installBtn.onclick = async () => {
+        if (installPrompt) {
+          installPrompt.prompt();
+          await installPrompt.userChoice;
+          installPrompt = null;
+          installBtn.hidden = true;
+        } else say("در Safari از Share، گزینه Add to Home Screen را بزن");
+      };
+      if (
+        /iphone|ipad|ipod/i.test(navigator.userAgent) &&
+        !navigator.standalone
+      )
+        installBtn.hidden = false;
     </script>
   </body>
 </html>
