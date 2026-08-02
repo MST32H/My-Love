@@ -1648,6 +1648,342 @@
           padding: 90px 22px;
         }
       }
+      /* V11 — interactive keepsakes */
+      .eighteen {
+        padding: 125px 5vw;
+        background: #120a0d;
+        color: #f4e8d7;
+        overflow: hidden;
+      }
+      .eighteen-head {
+        text-align: center;
+        max-width: 850px;
+        margin: 0 auto 60px;
+      }
+      .eighteen-head h3 {
+        font:
+          500 clamp(42px, 7vw, 82px) Georgia,
+          Tahoma,
+          serif;
+        margin: 12px 0;
+      }
+      .reason-stage {
+        max-width: 1080px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 55px;
+        align-items: center;
+      }
+      .reason-orbit {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        direction: ltr;
+      }
+      .reason-dot {
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 1px solid #d2ae6d55;
+        background: #ffffff05;
+        color: #d9bd88;
+        font: 16px Georgia;
+        transition: 0.35s;
+      }
+      .reason-dot:hover,
+      .reason-dot.active {
+        background: var(--gold);
+        color: #180c0e;
+        transform: scale(1.12);
+        box-shadow: 0 0 28px #d2ae6d55;
+      }
+      .reason-display {
+        min-height: 290px;
+        border: 1px solid #d2ae6d33;
+        padding: 50px;
+        background: radial-gradient(
+            circle at 80% 10%,
+            #6b142833,
+            transparent 45%
+          ),
+          #0b090a;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .reason-display small {
+        color: var(--gold);
+        letter-spacing: 0.18em;
+      }
+      .reason-display h4 {
+        font:
+          500 clamp(30px, 4vw, 50px) Georgia,
+          Tahoma,
+          serif;
+        margin: 16px 0;
+      }
+      .reason-display p {
+        color: #c7b6a0;
+        line-height: 2;
+        font-size: 17px;
+      }
+      .polaroids {
+        padding: 120px 5vw;
+        background: #e8dfd2;
+        color: #221510;
+      }
+      .polaroid-head {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .polaroid-head h3 {
+        font:
+          500 clamp(40px, 6vw, 76px) Georgia,
+          Tahoma,
+          serif;
+        margin: 10px;
+      }
+      .polaroid-deck {
+        max-width: 1150px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        perspective: 1200px;
+      }
+      .polaroid {
+        height: 390px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+        cursor: pointer;
+      }
+      .polaroid:nth-child(odd) {
+        transform: rotate(-2deg);
+      }
+      .polaroid:nth-child(even) {
+        transform: rotate(2deg);
+      }
+      .polaroid.flipped {
+        transform: rotateY(180deg);
+      }
+      .polaroid-face {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        background: #f9f4ea;
+        padding: 13px 13px 25px;
+        box-shadow: 0 20px 45px #3d291c33;
+      }
+      .polaroid-face img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+      .polaroid-face b {
+        display: block;
+        text-align: center;
+        font:
+          20px Georgia,
+          Tahoma,
+          serif;
+        margin-top: 18px;
+      }
+      .polaroid-back {
+        transform: rotateY(180deg);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 34px;
+        font:
+          20px/2 Georgia,
+          Tahoma,
+          serif;
+        background: linear-gradient(145deg, #fffaf1, #e5d4bd);
+      }
+      .capsule {
+        padding: 120px 5vw;
+        background: #09090b;
+        color: #eee0cb;
+        text-align: center;
+      }
+      .capsule-box {
+        max-width: 800px;
+        margin: auto;
+        border: 1px solid #d2ae6d44;
+        padding: 65px 45px;
+        position: relative;
+        background: radial-gradient(
+          circle at 50% 0,
+          #6b142833,
+          transparent 55%
+        );
+      }
+      .capsule-lock {
+        font-size: 52px;
+      }
+      .capsule h3 {
+        font:
+          500 clamp(36px, 6vw, 68px) Georgia,
+          Tahoma,
+          serif;
+        margin: 18px;
+      }
+      .capsule-count {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin: 35px 0;
+        direction: ltr;
+      }
+      .capsule-count b {
+        min-width: 76px;
+        padding: 14px 8px;
+        border: 1px solid #d2ae6d33;
+        font: 28px Georgia;
+        color: var(--gold);
+      }
+      .capsule-message {
+        display: none;
+        font:
+          22px/2 Georgia,
+          Tahoma,
+          serif;
+        color: #f0ddc0;
+      }
+      .capsule-box.open .capsule-locked {
+        display: none;
+      }
+      .capsule-box.open .capsule-message {
+        display: block;
+      }
+      .secret-zone {
+        padding: 110px 5vw;
+        background: #71152d;
+        color: #fff1e6;
+        text-align: center;
+      }
+      .secret-heart {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 1px solid #f0c88b88;
+        background: #280810;
+        color: #f2cd91;
+        font-size: 52px;
+        position: relative;
+        overflow: hidden;
+        touch-action: none;
+      }
+      .secret-heart:before {
+        content: "";
+        position: absolute;
+        inset: auto 0 0;
+        height: var(--secret, 0%);
+        background: #d2ae6d22;
+        transition: 0.1s;
+      }
+      .secret-note {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        max-width: 700px;
+        margin: 30px auto 0;
+        font:
+          26px/2 Georgia,
+          Tahoma,
+          serif;
+        transition: 0.8s;
+      }
+      .secret-note.open {
+        max-height: 300px;
+        opacity: 1;
+      }
+      .qr-gift {
+        padding: 80px 5vw;
+        background: #f2eadf;
+        color: #21130f;
+        display: flex;
+        justify-content: center;
+      }
+      .qr-card {
+        max-width: 760px;
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 38px;
+        align-items: center;
+        border: 1px solid #7a5b3333;
+        padding: 28px;
+        background: #fffaf2;
+        box-shadow: 0 25px 70px #4b321c1c;
+      }
+      .qr-card img {
+        width: 100%;
+        border-radius: 8px;
+      }
+      .qr-card h3 {
+        font:
+          500 36px Georgia,
+          Tahoma,
+          serif;
+        margin: 8px 0;
+      }
+      .qr-card p {
+        line-height: 1.9;
+        color: #6c5949;
+      }
+      @media (max-width: 760px) {
+        .eighteen,
+        .polaroids,
+        .capsule,
+        .secret-zone {
+          padding: 90px 20px;
+        }
+        .reason-stage {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+        .reason-orbit {
+          grid-template-columns: repeat(6, 1fr);
+          gap: 7px;
+        }
+        .reason-dot {
+          font-size: 13px;
+        }
+        .reason-display {
+          min-height: 250px;
+          padding: 32px;
+        }
+        .polaroid-deck {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          padding: 25px 8vw 45px;
+          gap: 18px;
+        }
+        .polaroid {
+          min-width: 78vw;
+          scroll-snap-align: center;
+        }
+        .qr-card {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .qr-card img {
+          width: 190px;
+          margin: auto;
+        }
+        .capsule-box {
+          padding: 45px 18px;
+        }
+        .capsule-count b {
+          min-width: 60px;
+          font-size: 22px;
+        }
+        .secret-note {
+          font-size: 20px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1668,7 +2004,7 @@
     </section>
     <audio
       id="music"
-      src="music.mp3?v=10"
+      src="music.mp3?v=11"
       loop
       preload="metadata"
       playsinline
@@ -1917,6 +2253,87 @@
         </div>
       </section>
       <section
+        class="eighteen"
+        id="eighteenChapter"
+        data-chapter="فصل هفتم — هجده دلیل"
+      >
+        <div class="eighteen-head reveal">
+          <span class="section-no">18 REASONS / 18 MONTHS</span>
+          <h3>هجده دلیل برای دوست‌داشتنت</h3>
+          <p>
+            هر شماره را لمس کن؛ پشت هرکدام، یک دلیل از من برای تو پنهان شده است.
+          </p>
+        </div>
+        <div class="reason-stage reveal">
+          <div class="reason-orbit" id="reasonOrbit"></div>
+          <article class="reason-display" id="reasonDisplay">
+            <small>REASON 01</small>
+            <h4>چون کنار تو، خودم هستم</h4>
+            <p>
+              بی‌نقاب، بی‌تظاهر و بی‌ترس از قضاوت؛ همان آدمی که هستم و تو باز هم
+              انتخابش می‌کنی.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section
+        class="polaroids"
+        id="polaroidChapter"
+        data-chapter="فصل هشتم — پشت قاب‌ها"
+      >
+        <div class="polaroid-head reveal">
+          <span class="section-no">TOUCH EACH MEMORY</span>
+          <h3>پشت هر عکس، یک حرف مانده</h3>
+          <p>کارت‌ها را لمس کن تا نوشته‌ی پشتشان را بخوانی.</p>
+        </div>
+        <div class="polaroid-deck">
+          <article class="polaroid reveal">
+            <div class="polaroid-face">
+              <img src="assets/cafe.webp" alt="متین و بیتا در کافه" /><b
+                >خنده‌های بی‌دلیل</b
+              >
+            </div>
+            <div class="polaroid-face polaroid-back">
+              کاش بتوانم تمام خنده‌هایت را جایی نگه دارم؛ برای روزهایی که دنیا
+              زیادی جدی می‌شود.
+            </div>
+          </article>
+          <article class="polaroid reveal">
+            <div class="polaroid-face">
+              <img src="assets/studio.webp" alt="پرتره متین و بیتا" /><b
+                >کنار هم</b
+              >
+            </div>
+            <div class="polaroid-face polaroid-back">
+              کنارت ایستادن برای من فقط یک قاب نیست؛ تصویری‌ست که از آینده دوست
+              دارم.
+            </div>
+          </article>
+          <article class="polaroid reveal">
+            <div class="polaroid-face">
+              <img src="assets/park.webp" alt="متین و بیتا در پارک" /><b
+                >همان نگاه</b
+              >
+            </div>
+            <div class="polaroid-face polaroid-back">
+              گاهی فقط نگاهم کن؛ بعضی جواب‌ها را چشم‌های تو بهتر از هر کلمه‌ای
+              می‌دهند.
+            </div>
+          </article>
+          <article class="polaroid reveal">
+            <div class="polaroid-face">
+              <img src="assets/noir.webp" alt="پرتره سینمایی متین و بیتا" /><b
+                >یک تیم واقعی</b
+              >
+            </div>
+            <div class="polaroid-face polaroid-back">
+              نه همیشه بی‌نقص، اما همیشه واقعی؛ دو نفر که یاد گرفته‌اند دوباره
+              سمت هم برگردند.
+            </div>
+          </article>
+        </div>
+      </section>
+      <section
         class="letter"
         id="letterChapter"
         data-chapter="فصل پنجم — نامه‌ای برای بیتا"
@@ -1952,7 +2369,7 @@
             </div>
             <audio
               id="voice"
-              src="voice.mp3?v=10"
+              src="voice.mp3?v=11"
               preload="auto"
               playsinline
               controls
@@ -1997,6 +2414,34 @@
         </article>
       </section>
       <section
+        class="capsule"
+        id="capsuleChapter"
+        data-chapter="فصل نهم — کپسول زمان"
+      >
+        <div class="capsule-box reveal" id="capsuleBox">
+          <div class="capsule-locked">
+            <div class="capsule-lock">♢</div>
+            <span class="section-no">TIME CAPSULE / 30 MORDAD</span>
+            <h3>یک حرف برای روزِ ما</h3>
+            <p>این پیام تا رسیدن سی‌ام مرداد، میان ما دو نفر قفل می‌ماند.</p>
+            <div class="capsule-count">
+              <b id="capDays">00</b><b id="capHours">00</b
+              ><b id="capMinutes">00</b><b id="capSeconds">00</b>
+            </div>
+            <small>برای پیش‌نمایش، لینک را با ?preview=1 باز کن</small>
+          </div>
+          <div class="capsule-message">
+            <span class="section-no">THE CAPSULE IS OPEN</span>
+            <h3>بیتای من…</h3>
+            <p>
+              اگر امروز این پیام را می‌خوانی، یعنی هجده ماه از شروع «ما» گذشته؛
+              و من هنوز هم فکر می‌کنم زیباترین اتفاق زندگی، پیدا کردن کسی‌ست که
+              هر روز دلت بخواهد دوباره انتخابش کنی. آن آدم برای من، تویی.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
         class="promise"
         id="promiseChapter"
         data-chapter="فصل هفتم — قول من"
@@ -2010,6 +2455,40 @@
             جدی بگیرم.
           </p>
           <div class="promise-sign">متین، برای بیتا</div>
+        </div>
+      </section>
+      <section
+        class="secret-zone"
+        id="secretChapter"
+        data-chapter="فصل مخفی — فقط برای تو"
+      >
+        <span class="section-no">A SECRET BETWEEN US</span>
+        <h3>بعضی حرف‌ها با یک لمس کوتاه باز نمی‌شوند</h3>
+        <p>قلب را دو ثانیه نگه دار.</p>
+        <button
+          class="secret-heart"
+          id="secretHeart"
+          aria-label="برای نمایش پیام مخفی نگه دارید"
+        >
+          ♥
+        </button>
+        <div class="secret-note" id="secretNote">
+          بیتا؛ اگر تمام این صفحه را فراموش کردی، فقط این را یادت بماند: در
+          شلوغ‌ترین روزهای زندگی، یک نفر هست که با فکر کردن به لبخندت، دوباره
+          آرام می‌شود.
+        </div>
+      </section>
+      <section class="qr-gift">
+        <div class="qr-card reveal">
+          <img src="assets/qr-v11.png" alt="کیوآرکد سایت اختصاصی متین و بیتا" />
+          <div>
+            <span class="section-no">KEEP OUR STORY CLOSE</span>
+            <h3>قصه‌مان، همیشه همراهت</h3>
+            <p>
+              این QR را می‌شود روی کارت هدیه چاپ کرد؛ با اسکن آن، دوباره همین
+              داستان خصوصی باز می‌شود.
+            </p>
+          </div>
         </div>
       </section>
       <section class="finale" id="finale" data-chapter="فصل آخر — ادامه دارد">
@@ -2472,6 +2951,169 @@
         if (music.paused) await play();
         else music.pause();
       };
+      const reasons18 = [
+        [
+          "چون کنار تو، خودم هستم",
+          "بی‌نقاب، بی‌تظاهر و بی‌ترس از قضاوت؛ همان آدمی که هستم و تو باز هم انتخابش می‌کنی.",
+        ],
+        [
+          "چون آرامم می‌کنی",
+          "حتی وقتی هیچ راه‌حلی نداری، حضورت خودش شبیه جواب است.",
+        ],
+        [
+          "چون لبخندت واقعی‌ست",
+          "لبخندی که می‌تواند سخت‌ترین روزم را از نو شروع کند.",
+        ],
+        [
+          "چون می‌فهمی",
+          "گاهی قبل از آنکه چیزی بگویم، از سکوت من تمام ماجرا را می‌خوانی.",
+        ],
+        [
+          "چون صبوری",
+          "برای وقت‌هایی که من بهترین نسخه خودم نبودم، اما تو هنوز با محبت ماندی.",
+        ],
+        [
+          "چون با تو می‌خندم",
+          "از آن خنده‌هایی که زمان را متوقف می‌کنند و تا مدت‌ها در ذهنم می‌مانند.",
+        ],
+        [
+          "چون به من باور داری",
+          "حتی روزهایی که خودم توانایی‌هایم را فراموش می‌کنم.",
+        ],
+        [
+          "چون مهربانی",
+          "نه فقط با من؛ با آدم‌ها، با دنیا و با تمام جزئیات کوچکی که دیگران نمی‌بینند.",
+        ],
+        [
+          "چون شجاعی",
+          "می‌ترسی، اما باز هم جلو می‌روی؛ و همین تو را برایم تحسین‌برانگیز می‌کند.",
+        ],
+        [
+          "چون خانه‌ای",
+          "خانه برای من دیگر یک آدرس نیست؛ حسی‌ست که وقتی کنار تو هستم تجربه می‌کنم.",
+        ],
+        [
+          "چون واقعی هستی",
+          "زیبایی تو فقط در عکس‌ها نیست؛ در صداقت و خودِ واقعی‌ات نفس می‌کشد.",
+        ],
+        [
+          "چون جزئیات را به‌یاد می‌سپاری",
+          "همان چیزهای کوچکی که نشان می‌دهند حرف‌هایم واقعاً برایت مهم‌اند.",
+        ],
+        [
+          "چون کنارم رشد می‌کنی",
+          "ما فقط عاشق نمانده‌ایم؛ کنار هم آدم‌های کامل‌تری شده‌ایم.",
+        ],
+        [
+          "چون دلتنگت می‌شوم",
+          "حتی فاصله‌های کوتاه ثابت می‌کنند حضورت چقدر در روزهای من ریشه دارد.",
+        ],
+        [
+          "چون انتخابم می‌کنی",
+          "نه فقط یک‌بار؛ در گفت‌وگوها، بخشیدن‌ها و ادامه‌دادن‌ها.",
+        ],
+        [
+          "چون رؤیا داری",
+          "و من دوست دارم روزی از نزدیک، واقعی‌شدن تمام آن‌ها را ببینم.",
+        ],
+        [
+          "چون آینده با تو زیباست",
+          "وقتی به فردا فکر می‌کنم، بهترین تصویرش جایی‌ست که تو در آن حضور داری.",
+        ],
+        [
+          "چون تو، تویی",
+          "و برای دوست‌داشتنت همیشه لازم نیست دلیل منطقی داشته باشم؛ گاهی خودِ تو تمام دلیل منی.",
+        ],
+      ];
+      const orbit = document.getElementById("reasonOrbit"),
+        display = document.getElementById("reasonDisplay");
+      reasons18.forEach((r, i) => {
+        const b = document.createElement("button");
+        b.className = "reason-dot" + (i === 0 ? " active" : "");
+        b.textContent = String(i + 1).padStart(2, "0");
+        b.setAttribute("aria-label", `دلیل شماره ${i + 1}`);
+        b.onclick = () => {
+          document
+            .querySelectorAll(".reason-dot")
+            .forEach((x) => x.classList.remove("active"));
+          b.classList.add("active");
+          display.animate(
+            [
+              { opacity: 0.2, transform: "translateY(8px)" },
+              { opacity: 1, transform: "none" },
+            ],
+            { duration: 420 },
+          );
+          display.innerHTML = `<small>REASON ${String(i + 1).padStart(2, "0")}</small><h4>${r[0]}</h4><p>${r[1]}</p>`;
+        };
+        orbit.appendChild(b);
+      });
+      document
+        .querySelectorAll(".polaroid")
+        .forEach((card) =>
+          card.addEventListener("click", () =>
+            card.classList.toggle("flipped"),
+          ),
+        );
+      const capTarget = new Date("2026-08-21T00:00:00+03:30"),
+        capBox = document.getElementById("capsuleBox");
+      function capsuleTick() {
+        const preview =
+            new URLSearchParams(location.search).get("preview") === "1",
+          diff = capTarget - Date.now();
+        if (preview || diff <= 0) {
+          capBox.classList.add("open");
+          return;
+        }
+        const vals = [
+          Math.floor(diff / 86400000),
+          Math.floor(diff / 3600000) % 24,
+          Math.floor(diff / 60000) % 60,
+          Math.floor(diff / 1000) % 60,
+        ];
+        ["capDays", "capHours", "capMinutes", "capSeconds"].forEach(
+          (id, i) =>
+            (document.getElementById(id).textContent = String(vals[i]).padStart(
+              2,
+              "0",
+            )),
+        );
+      }
+      capsuleTick();
+      setInterval(capsuleTick, 1000);
+      const secretHeart = document.getElementById("secretHeart"),
+        secretNote = document.getElementById("secretNote");
+      let secretTimer, secretStart, secretRAF;
+      function secretProgress() {
+        const p = Math.min(100, (performance.now() - secretStart) / 20);
+        secretHeart.style.setProperty("--secret", p + "%");
+        if (p < 100) secretRAF = requestAnimationFrame(secretProgress);
+      }
+      function beginSecret() {
+        secretStart = performance.now();
+        secretTimer = setTimeout(() => {
+          secretNote.classList.add("open");
+          secretHeart.textContent = "♡";
+          navigator.vibrate && navigator.vibrate([40, 30, 80]);
+        }, 2000);
+        secretProgress();
+      }
+      function cancelSecret() {
+        clearTimeout(secretTimer);
+        cancelAnimationFrame(secretRAF);
+        if (!secretNote.classList.contains("open"))
+          secretHeart.style.setProperty("--secret", "0%");
+      }
+      ["pointerup", "pointerleave", "pointercancel"].forEach((e) =>
+        secretHeart.addEventListener(e, cancelSecret),
+      );
+      secretHeart.addEventListener("pointerdown", beginSecret);
+      secretHeart.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          secretNote.classList.add("open");
+        }
+      });
     </script>
   </body>
 </html>
