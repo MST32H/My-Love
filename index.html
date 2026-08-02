@@ -1389,6 +1389,265 @@
           transition-duration: 0.01ms !important;
         }
       }
+      /* V10 — cinematic relationship chapters */
+      .timeline {
+        padding: 130px 6vw;
+        background: linear-gradient(145deg, #08080a, #160c10);
+        color: #f6ead8;
+        position: relative;
+        overflow: hidden;
+      }
+      .timeline:before {
+        content: "XVIII";
+        position: absolute;
+        left: -2vw;
+        top: 20px;
+        font: 900 clamp(120px, 25vw, 380px) Georgia;
+        color: #ffffff04;
+      }
+      .timeline-head {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 80px;
+      }
+      .timeline-head h3 {
+        font:
+          500 clamp(38px, 6vw, 78px) Georgia,
+          Tahoma,
+          serif;
+        margin: 14px 0;
+      }
+      .timeline-head p {
+        color: #bea98c;
+        line-height: 2;
+      }
+      .timeline-line {
+        max-width: 1000px;
+        margin: auto;
+        position: relative;
+      }
+      .timeline-line:before {
+        content: "";
+        position: absolute;
+        right: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: linear-gradient(transparent, var(--gold), transparent);
+      }
+      .memory {
+        width: 50%;
+        padding: 0 54px 70px;
+        position: relative;
+      }
+      .memory:nth-child(even) {
+        margin-right: 50%;
+      }
+      .memory:before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: var(--gold2);
+        box-shadow:
+          0 0 0 8px #d2ae6d18,
+          0 0 25px #d2ae6d88;
+      }
+      .memory:nth-child(odd):before {
+        left: -7px;
+      }
+      .memory:nth-child(even):before {
+        right: -7px;
+      }
+      .memory small {
+        letter-spacing: 0.18em;
+        color: var(--gold);
+        font-size: 11px;
+      }
+      .memory h4 {
+        font:
+          500 28px Georgia,
+          Tahoma,
+          serif;
+        margin: 10px 0;
+      }
+      .memory p {
+        color: #b9aa98;
+        line-height: 1.9;
+        margin: 0;
+      }
+      .reasons {
+        padding: 120px 5vw;
+        background: #efe8dd;
+        color: #211611;
+      }
+      .reasons-head {
+        max-width: 900px;
+        margin: 0 auto 55px;
+        text-align: center;
+      }
+      .reasons-head h3 {
+        font:
+          500 clamp(38px, 6vw, 72px) Georgia,
+          Tahoma,
+          serif;
+        margin: 12px 0;
+      }
+      .reason-grid {
+        max-width: 1150px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .reason-card {
+        min-height: 310px;
+        border: 1px solid #7f603c33;
+        background: linear-gradient(145deg, #fffaf2, #e5d8c6);
+        padding: 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        transition: 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .reason-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 28px 70px #5c3c1d25;
+      }
+      .reason-card:after {
+        content: attr(data-no);
+        position: absolute;
+        left: 18px;
+        bottom: -28px;
+        font: 900 120px Georgia;
+        color: #5f3f2010;
+      }
+      .reason-card i {
+        font-style: normal;
+        font: 46px Georgia;
+        color: #7a1830;
+      }
+      .reason-card h4 {
+        font:
+          500 28px Georgia,
+          Tahoma,
+          serif;
+        margin: 18px 0 10px;
+      }
+      .reason-card p {
+        line-height: 1.9;
+        color: #69594c;
+      }
+      .voice-caption {
+        min-height: 54px;
+        margin-top: 14px;
+        padding: 12px 16px;
+        border-right: 2px solid var(--gold);
+        background: #ffffff08;
+        color: #e9d9c1;
+        line-height: 1.8;
+        opacity: 0;
+        transform: translateY(6px);
+        transition: 0.45s;
+      }
+      .voice-caption.show {
+        opacity: 1;
+        transform: none;
+      }
+      .promise {
+        padding: 120px 6vw;
+        background: #0b0809;
+        color: #f5ead9;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .promise:before {
+        content: "";
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border: 1px solid #d2ae6d14;
+        border-radius: 50%;
+        inset: 50% auto auto 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 120px #6b142822 inset;
+      }
+      .promise-inner {
+        position: relative;
+        max-width: 900px;
+        margin: auto;
+      }
+      .promise h3 {
+        font:
+          500 clamp(42px, 7vw, 88px) Georgia,
+          Tahoma,
+          serif;
+        margin: 18px 0;
+      }
+      .promise p {
+        font-size: 18px;
+        line-height: 2;
+        color: #c5b49c;
+      }
+      .promise-sign {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 35px;
+        color: var(--gold);
+      }
+      .promise-sign:before,
+      .promise-sign:after {
+        content: "";
+        width: 70px;
+        height: 1px;
+        background: #d2ae6d55;
+      }
+      @media (max-width: 760px) {
+        .timeline {
+          padding: 90px 22px;
+        }
+        .timeline-head {
+          margin-bottom: 55px;
+        }
+        .timeline-line:before {
+          right: 7px;
+        }
+        .memory,
+        .memory:nth-child(even) {
+          width: 100%;
+          margin: 0;
+          padding: 0 34px 55px 0;
+        }
+        .memory:nth-child(odd):before,
+        .memory:nth-child(even):before {
+          right: 1px;
+          left: auto;
+        }
+        .memory h4 {
+          font-size: 23px;
+        }
+        .reason-grid {
+          grid-template-columns: 1fr;
+        }
+        .reason-card {
+          min-height: 240px;
+        }
+        .reasons {
+          padding: 90px 20px;
+        }
+        .voice-caption {
+          font-size: 14px;
+        }
+        .promise {
+          padding: 90px 22px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1409,7 +1668,7 @@
     </section>
     <audio
       id="music"
-      src="music.mp3?v=9"
+      src="music.mp3?v=10"
       loop
       preload="metadata"
       playsinline
@@ -1567,6 +1826,97 @@
         <div class="gallery-tip">← برای دیدن ادامه، گالری را بکش →</div>
       </section>
       <section
+        class="timeline"
+        id="timelineChapter"
+        data-chapter="فصل پنجم — هجده ماه ما"
+      >
+        <div class="timeline-head reveal">
+          <span class="section-no">OUR STORY / 18 MONTHS</span>
+          <h3>هجده ماه؛ چهار ایستگاه، یک انتخاب</h3>
+          <p>
+            قصه‌ی ما فقط با تاریخ‌ها اندازه‌گیری نمی‌شود؛ با لحظه‌هایی
+            اندازه‌گیری می‌شود که بعد از آن‌ها، دیگر آدمِ قبل نبودیم.
+          </p>
+        </div>
+        <div class="timeline-line">
+          <article class="memory reveal">
+            <small>30 BAHMAN 1403</small>
+            <h4>روزی که «من و تو» شد «ما»</h4>
+            <p>
+              همه‌چیز از یک لحظه ساده شروع شد؛ اما همان لحظه، مسیر تمام روزهای
+              بعد را عوض کرد.
+            </p>
+          </article>
+          <article class="memory reveal">
+            <small>THE FIRST SEASONS</small>
+            <h4>وقتی حضورت شبیه خانه شد</h4>
+            <p>
+              میان خنده‌ها و دل‌تنگی‌ها فهمیدم آرامش، یک مکان نیست؛ آدمی‌ست که
+              دلت کنارش قرص می‌شود.
+            </p>
+          </article>
+          <article class="memory reveal">
+            <small>EVERY ORDINARY DAY</small>
+            <h4>معمولی‌هایی که ماندگار شدند</h4>
+            <p>
+              تو به روزهای ساده رنگ دادی؛ به گفت‌وگوهای کوتاه معنا و به
+              خستگی‌های من دلیلی برای ادامه.
+            </p>
+          </article>
+          <article class="memory reveal">
+            <small>30 MORDAD 1405</small>
+            <h4>هجده ماه بعد؛ هنوز انتخاب منی</h4>
+            <p>
+              نه از روی عادت؛ از روی شناخت. امروز بیشتر از روز اول می‌دانم چرا
+              تو را برای ادامه‌ی قصه می‌خواهم.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section
+        class="reasons"
+        id="reasonsChapter"
+        data-chapter="فصل ششم — چرا تو؟"
+      >
+        <div class="reasons-head reveal">
+          <span class="section-no">THREE REASONS / ONE LOVE</span>
+          <h3>چرا تو؟</h3>
+          <p>اگر قرار باشد از میان هزار دلیل فقط سه‌تایش را نگه دارم…</p>
+        </div>
+        <div class="reason-grid">
+          <article class="reason-card reveal" data-no="01">
+            <div>
+              <i>آ</i>
+              <h4>آرامشت</h4>
+            </div>
+            <p>
+              کنار تو لازم نیست نقش آدمِ همیشه قوی را بازی کنم؛ می‌توانم خودم
+              باشم و بدانم هنوز دوست‌داشتنی‌ام.
+            </p>
+          </article>
+          <article class="reason-card reveal" data-no="02">
+            <div>
+              <i>ل</i>
+              <h4>لبخندت</h4>
+            </div>
+            <p>
+              همان لبخندی که شلوغ‌ترین فکرهایم را ساکت می‌کند و به معمولی‌ترین
+              روزها دلیلِ ماندن می‌دهد.
+            </p>
+          </article>
+          <article class="reason-card reveal" data-no="03">
+            <div>
+              <i>ب</i>
+              <h4>باورمان</h4>
+            </div>
+            <p>
+              دوستت دارم چون عشق ما فقط احساس نیست؛ انتخابی‌ست که هر دو، هر روز
+              دوباره انجامش می‌دهیم.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section
         class="letter"
         id="letterChapter"
         data-chapter="فصل پنجم — نامه‌ای برای بیتا"
@@ -1602,13 +1952,20 @@
             </div>
             <audio
               id="voice"
-              src="voice.mp3?v=9"
+              src="voice.mp3?v=10"
               preload="auto"
               playsinline
               controls
               controlsList="nodownload"
               aria-label="پیام صوتی متین برای بیتا"
             ></audio>
+            <div
+              class="voice-caption show"
+              id="voiceCaption"
+              aria-live="polite"
+            >
+              این صدا، فقط برای تو ضبط شده…
+            </div>
           </div>
           <span class="voice-time" id="voiceTime">00:00 / 01:05</span>
         </div>
@@ -1638,6 +1995,22 @@
             <p style="--d: 640ms">با تمامِ دلم — متین</p>
           </div>
         </article>
+      </section>
+      <section
+        class="promise"
+        id="promiseChapter"
+        data-chapter="فصل هفتم — قول من"
+      >
+        <div class="promise-inner reveal">
+          <span class="section-no">A PROMISE, NOT A CAPTION</span>
+          <h3>قول نمی‌دهم همه‌چیز همیشه آسان باشد…</h3>
+          <p>
+            اما قول می‌دهم در سختی‌ها رهایت نکنم؛ در شادی‌ها اولین کسی باشم که
+            لبخندت را جشن می‌گیرد و در تمام فصل‌هایی که هنوز نیامده‌اند، «ما» را
+            جدی بگیرم.
+          </p>
+          <div class="promise-sign">متین، برای بیتا</div>
+        </div>
       </section>
       <section class="finale" id="finale" data-chapter="فصل آخر — ادامه دارد">
         <img src="assets/beach.webp" alt="متین و بیتا در ساحل" />
@@ -1974,7 +2347,18 @@
         voicePlay = document.getElementById("voicePlay"),
         voiceFill = document.getElementById("voiceFill"),
         voiceTrack = document.getElementById("voiceTrack"),
-        voiceTime = document.getElementById("voiceTime");
+        voiceTime = document.getElementById("voiceTime"),
+        voiceCaption = document.getElementById("voiceCaption");
+      const voiceLines = [
+        [0, "این صدا، فقط برای تو ضبط شده…"],
+        [7, "بیتا؛ بعضی حس‌ها را نمی‌شود فقط نوشت."],
+        [16, "هجده ماه گذشت و هنوز حضورت برایم تازه است."],
+        [27, "تو آرامشی هستی که میان شلوغی دنیا پیدا کردم."],
+        [39, "برای تمام خنده‌ها، صبوری‌ها و ماندنت ممنونم."],
+        [51, "من هنوز هم، هر روز، تو را انتخاب می‌کنم."],
+        [60, "هجده‌ماهگی‌مان مبارک؛ ادامه دارد…"],
+      ];
+      let activeVoiceLine = -1;
       let resumeMusicAfterVoice = false,
         voiceBusy = false;
       function fmt(t) {
@@ -2044,6 +2428,17 @@
           "%";
         voiceTime.textContent =
           fmt(voice.currentTime) + " / " + fmt(voice.duration);
+        let nextLine = 0;
+        for (let i = 0; i < voiceLines.length; i++)
+          if (voice.currentTime >= voiceLines[i][0]) nextLine = i;
+        if (nextLine !== activeVoiceLine) {
+          activeVoiceLine = nextLine;
+          voiceCaption.classList.remove("show");
+          setTimeout(() => {
+            voiceCaption.textContent = voiceLines[nextLine][1];
+            voiceCaption.classList.add("show");
+          }, 160);
+        }
       });
       voice.addEventListener(
         "loadedmetadata",
